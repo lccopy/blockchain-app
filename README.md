@@ -36,9 +36,10 @@ The code is divided this way:
 
 3. Blockchain Data (blockchain.json): This file stores the current state of the blockchain, allowing for persistence across sessions. It gets updated whenever the blockchain is saved.
 
-A class Block is defined to represent a block in the blockchain, which has attributes like index, previous hash, timestamp, transactions, proof of work, and hash of the block.
 
 ##### Core Functions
+
+A class Block is defined to represent a block in the blockchain, which has attributes like index, previous hash, timestamp, transactions, proof of work, and hash of the block.
 
 calculate_hash(block): Calculates the hash of a block using SHA-256 hashing algorithm.
 
