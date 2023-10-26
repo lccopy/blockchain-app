@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain App - {% block title %}Home{% endblock %}</title>
+    <style>
+        :root {
+            --primary-bg-color: #242f3e;
+            --secondary-bg-color: #3a4a63;
+            --hover-bg-color: #506a80;
+            --primary-text-color: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            background-color: var(--primary-bg-color);
+            color: var(--primary-text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            background-color: var(--secondary-bg-color);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        nav a, .btn, ul.block-list li a {
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            background-color: var(--secondary-bg-color);
+            color: var(--primary-text-color);
+            transition: background-color 0.2s;
+        }
+
+        nav a:hover, .btn:hover, ul.block-list li a:hover {
+            background-color: var(--hover-bg-color);
+        }
+
+        main {
+            padding: 40px 5%;
+        }
+
+        .actions, ul.block-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul.block-list li {
+            margin-bottom: 20px;
+            border: 1px solid var(--secondary-bg-color);
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav a {
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/transactions/new">New Transaction</a>
+        <a href="/mine">Mine</a>
+    </nav>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Mine{% endblock %}
+{% block content %}
+    <h2>Mine a New Block</h2>
+    <form action="/mine" method="post" class="mine-form">
+        <input class="btn mine-btn" type="submit" value="Mine Now">
+    </form>
+    {% if new_block %}
+    <h3>New Block Details:</h3>
+    <ul class="block-details">
+        <li>Index: {{ new_block.index }}</li>
+        <li>Transactions: {{ new_block.transactions }}</li>
+        <li>Hash: {{ new_block.hash }}</li>
+    </ul>
+    {% endif %}
+
+    <style>
+        .mine-form {
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .btn.mine-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        .btn.mine-btn:hover {
+            background-color: #45a049;
+        }
+        .block-details {
+            list-style-type: none;
+            padding-left: 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        .block-details li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .block-details li:last-child {
+            border-bottom: none;
+        }
+    </style>
+
+{% endblock %}
