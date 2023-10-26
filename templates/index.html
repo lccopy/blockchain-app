@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block title %}All Blocks{% endblock %}
+{% block content %}
+    <h2>All Blocks in the Blockchain</h2>
+
+    <div class="actions">
+        <a class="btn" href="/validate">Validate Blockchain</a>
+        <a class="btn" href="/save">Save Blockchain</a>
+        <a class="btn" href="/load">Load Blockchain</a>
+        <a class="btn" href="/simulate_peer">Simulate Peer's Blockchain</a>
+        <a class="btn" href="/resolve">Resolve to Valid Blockchain</a>
+        <a class="btn" href="/">Refresh</a>
+
+      </div>
+
+    <ul class="block-list">
+    {% for block in blockchain %}
+        <li>
+            <div class="block-content">
+                <strong>Block {{ block.index }}</strong>
+
+                <div class="transactions">
+                    <p><strong>Transactions:</strong></p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sender</th>
+                                <th>Recipient</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for transaction in block.transactions %}
+                            <tr>
+                                <td>{{ transaction.sender }}</td>
+                                <td>{{ transaction.recipient }}</td>
+                                <td>{{ transaction.amount }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="hash">Hash: {{ block.hash }}</p>
+                <a class="btn details-btn" href="/block/{{ block.index }}">View Details</a>
+              </div>
+        </li>
+    {% endfor %}
+    </ul>
+
+    <style>
+        .details-btn {
+            max-width: 200px;
+            width: 100%;
+            text-align: center;
+        }
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .actions .btn {
+            flex: 1 1 calc(33.333% - 10px);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .block-list li {
+            margin-bottom: 15px;
+        }
+        .block-content {
+            display: grid;
+            grid-template-columns: 1fr 3fr auto;
+            gap: 15px;
+            align-items: center;
+        }
+        .transactions table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        .transactions th, .transactions td {
+            border: 1px solid #ccc;
+            padding: 5px;
+            text-align: left;
+        }
+        .hash {
+            grid-column: 1 / -1;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            word-break: break-word;
+            max-width: 80%;
+        }
+        @media (max-width: 600px) {
+            .actions .btn {
+                flex: 1 1 calc(50% - 10px);
+            }
+            .block-content {
+                grid-template-columns: 1fr auto;
+            }
+            .hash {
+                grid-column: 1 / -1;
+            }
+        }
+    </style>
+{% endblock %}
