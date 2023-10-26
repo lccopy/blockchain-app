@@ -6,7 +6,7 @@ This project provides an interactive simulation environment to present the core 
 
 Users can create transactions, mine new blocks, and experience how consensus algorithms work in case of conflicts between different chain states.
 
-<img width="500" alt="a718fa8f-564b-4a92-ad29-8f069eec13de" src="https://github.com/lccopy/blockchain-app/assets/111251905/e2c1dff6-901f-4475-856d-9133b9ba3d4d"> <img width="470" alt="image" src="https://github.com/lccopy/blockchain-app/assets/111251905/66c35f0e-4d9f-4e76-a475-44f475176cd5">
+<img width="500" alt="a718fa8f-564b-4a92-ad29-8f069eec13de" src="https://github.com/lccopy/blockchain-app/assets/111251905/e2c1dff6-901f-4475-856d-9133b9ba3d4d"> <img width="500" alt="image" src="https://github.com/lccopy/blockchain-app/assets/111251905/66c35f0e-4d9f-4e76-a475-44f475176cd5">
 
 
  
